@@ -17,7 +17,7 @@ const Hero = () => {
         <Button 
           variant="link" 
           className="text-base"
-          onClick={() => window.location.href = "https://calendly.com/votre-lien"}
+          onClick={() => window.location.href = "https://votrenouveau.lien"}
         >
           Réserver une démo
         </Button>
