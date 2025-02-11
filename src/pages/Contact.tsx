@@ -46,31 +46,26 @@ const ContactPage = () => {
       description: "Contactez-nous directement",
       icon: <Phone className="h-6 w-6" />,
       secondaryIcon: <Video className="h-6 w-6" />,
-      action: "Planifier un appel"
     },
     {
       title: "Rencontrer un expert",
       description: "Pour évaluer votre projet et obtenir une démonstration personnalisée",
       icon: <Users className="h-6 w-6" />,
-      action: "Prendre rendez-vous"
     },
     {
       title: "Devenez partenaire",
       description: "Planifiez un rendez-vous avec un Partner Manager",
       icon: <Handshake className="h-6 w-6" />,
-      action: "Devenir partenaire"
     },
     {
       title: "Demandez des développements personnalisés",
       description: "Vous avez besoin de contacter des développeurs ?",
       icon: <MessageSquare className="h-6 w-6" />,
-      action: "Contacter l'équipe"
     },
     {
       title: "Demandes de support",
       description: "Vous avez besoin d'aide ? Vous avez une question ?",
       icon: <HelpCircle className="h-6 w-6" />,
-      action: "Obtenir de l'aide"
     }
   ];
 
@@ -85,30 +80,8 @@ const ContactPage = () => {
           </div>
           
           <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
-            {/* Section des cartes de contact (gauche) */}
+            {/* Formulaire de contact (gauche) */}
             <div className="lg:w-7/12">
-              <h2 className="text-2xl font-bold mb-6">Comment pouvons-nous vous aider ?</h2>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {contactCards.map((card, index) => (
-                  <Card key={index} className="hover:shadow-lg transition-shadow">
-                    <CardHeader>
-                      <div className="flex items-center gap-4 mb-4">
-                        {card.icon}
-                        {card.secondaryIcon && card.secondaryIcon}
-                      </div>
-                      <CardTitle className="text-lg mb-2">{card.title}</CardTitle>
-                      <CardDescription className="text-gray-600 mb-4">
-                        {card.description}
-                      </CardDescription>
-                      <Button className="w-full">{card.action}</Button>
-                    </CardHeader>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* Formulaire de contact (droite) */}
-            <div className="lg:w-5/12">
               <div className="bg-white p-8 rounded-lg shadow-lg">
                 <h2 className="text-2xl font-bold mb-6">Vous cherchez quelque chose ?</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -202,7 +175,32 @@ const ContactPage = () => {
                   <Button type="submit" className="w-full">
                     Envoyer
                   </Button>
+
+                  <p className="text-sm text-gray-500 mt-4">
+                    Nous traiterons vos données à caractère personnel de la manière décrite dans notre Politique vie privée, pour répondre à vos questions et vous fournir plus d'informations sur nos produits et nos services.
+                  </p>
                 </form>
+              </div>
+            </div>
+
+            {/* Section des cartes de contact (droite) */}
+            <div className="lg:w-5/12">
+              <h2 className="text-2xl font-bold mb-6">Comment pouvons-nous vous aider ?</h2>
+              <div className="space-y-4">
+                {contactCards.map((card, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-shadow">
+                    <CardHeader>
+                      <div className="flex items-center gap-4 mb-2">
+                        {card.icon}
+                        {card.secondaryIcon && card.secondaryIcon}
+                      </div>
+                      <CardTitle className="text-lg mb-1">{card.title}</CardTitle>
+                      <CardDescription className="text-gray-600">
+                        {card.description}
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
+                ))}
               </div>
             </div>
           </div>
