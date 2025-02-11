@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
@@ -13,10 +14,10 @@ const Hero = () => {
         Une suite complète d'applications pour gérer efficacement votre entreprise : CRM, eCommerce, Comptabilité, et plus encore.
       </p>
       <div className="flex justify-center gap-4">
-        <Button onClick={() => navigate("/pricing")} variant="default" size="lg">
+        <Button onClick={() => navigate("/contact")} variant="default" size="lg">
           Réserver une démo
         </Button>
-        <Button variant="outline" size="lg">
+        <Button variant="outline" size="lg" onClick={() => navigate("/contact")}>
           En savoir plus
         </Button>
       </div>

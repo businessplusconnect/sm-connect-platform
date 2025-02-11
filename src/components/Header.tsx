@@ -1,17 +1,19 @@
+
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Button from "./Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navItems = [
     { label: "Applications", href: "#" },
     { label: "Industries", href: "#" },
     { label: "Communauté", href: "#" },
     { label: "Tarification", href: "/pricing" },
-    { label: "Contact", href: "#" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -27,7 +29,7 @@ const Header = () => {
             {navItems.map((item) => (
               <Link
                 key={item.label}
-                to={item.href.startsWith("#") ? item.href : item.href}
+                to={item.href}
                 className="text-gray-700 hover:text-primary transition-colors"
               >
                 {item.label}
@@ -37,8 +39,8 @@ const Header = () => {
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="link">Se connecter</Button>
-            <Button>Essai gratuit</Button>
+            <Button variant="link" onClick={() => navigate("/contact")}>Se connecter</Button>
+            <Button onClick={() => navigate("/contact")}>Essai gratuit</Button>
           </div>
 
           {/* Mobile menu button */}
@@ -60,17 +62,19 @@ const Header = () => {
             {navItems.map((item) => (
               <Link
                 key={item.label}
-                to={item.href.startsWith("#") ? item.href : item.href}
+                to={item.href}
                 className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors"
               >
                 {item.label}
               </Link>
             ))}
             <div className="px-3 py-2 space-y-2">
-              <Button variant="link" className="w-full">
+              <Button variant="link" className="w-full" onClick={() => navigate("/contact")}>
                 Se connecter
               </Button>
-              <Button className="w-full">Essai gratuit</Button>
+              <Button className="w-full" onClick={() => navigate("/contact")}>
+                Essai gratuit
+              </Button>
             </div>
           </div>
         </div>
