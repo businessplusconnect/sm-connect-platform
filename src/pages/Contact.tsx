@@ -80,123 +80,131 @@ const ContactPage = () => {
       <main className="flex-grow py-20 bg-gradient-to-b from-[#D3E4FD] to-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">Comment pouvons-nous vous aider ?</h1>
-            <p className="text-xl text-gray-600">Choisissez une option ci-dessous pour nous contacter</p>
+            <h1 className="text-4xl font-bold mb-4">Nous contacter</h1>
+            <p className="text-xl text-gray-600">Choisissez la meilleure façon de nous contacter</p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
-            {contactCards.map((card, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center gap-4 mb-4">
-                    {card.icon}
-                    {card.secondaryIcon && card.secondaryIcon}
+          <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
+            {/* Section des cartes de contact (gauche) */}
+            <div className="lg:w-7/12">
+              <h2 className="text-2xl font-bold mb-6">Comment pouvons-nous vous aider ?</h2>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {contactCards.map((card, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-shadow">
+                    <CardHeader>
+                      <div className="flex items-center gap-4 mb-4">
+                        {card.icon}
+                        {card.secondaryIcon && card.secondaryIcon}
+                      </div>
+                      <CardTitle className="text-lg mb-2">{card.title}</CardTitle>
+                      <CardDescription className="text-gray-600 mb-4">
+                        {card.description}
+                      </CardDescription>
+                      <Button className="w-full">{card.action}</Button>
+                    </CardHeader>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Formulaire de contact (droite) */}
+            <div className="lg:w-5/12">
+              <div className="bg-white p-8 rounded-lg shadow-lg">
+                <h2 className="text-2xl font-bold mb-6">Vous cherchez quelque chose ?</h2>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Nom *</Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                    />
                   </div>
-                  <CardTitle className="text-xl mb-2">{card.title}</CardTitle>
-                  <CardDescription className="text-gray-600 mb-4">
-                    {card.description}
-                  </CardDescription>
-                  <Button className="w-full">{card.action}</Button>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
 
-          {/* Formulaire de contact */}
-          <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold mb-6">Vous cherchez quelque chose ?</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="name">Nom *</Label>
-                <Input
-                  id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                />
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Numéro de téléphone</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="email">E-mail *</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="company">Société</Label>
+                    <Input
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="subject">Sujet *</Label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      required
+                      value={formData.subject}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="companySize">Votre taille d'entreprise</Label>
+                    <Select 
+                      onValueChange={(value) => 
+                        setFormData({...formData, companySize: value})
+                      }
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Sélectionnez la taille" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="1-10">1-10 employés</SelectItem>
+                        <SelectItem value="11-50">11-50 employés</SelectItem>
+                        <SelectItem value="51-200">51-200 employés</SelectItem>
+                        <SelectItem value="201-500">201-500 employés</SelectItem>
+                        <SelectItem value="500+">500+ employés</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="question">Question *</Label>
+                    <Textarea
+                      id="question"
+                      name="question"
+                      required
+                      value={formData.question}
+                      onChange={handleChange}
+                      className="min-h-[100px]"
+                    />
+                  </div>
+
+                  <Button type="submit" className="w-full">
+                    Envoyer
+                  </Button>
+                </form>
               </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="phone">Numéro de téléphone</Label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  value={formData.phone}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">E-mail *</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="company">Société</Label>
-                <Input
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="subject">Sujet *</Label>
-                <Input
-                  id="subject"
-                  name="subject"
-                  required
-                  value={formData.subject}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="companySize">Votre taille d'entreprise</Label>
-                <Select 
-                  onValueChange={(value) => 
-                    setFormData({...formData, companySize: value})
-                  }
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Sélectionnez la taille" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="1-10">1-10 employés</SelectItem>
-                    <SelectItem value="11-50">11-50 employés</SelectItem>
-                    <SelectItem value="51-200">51-200 employés</SelectItem>
-                    <SelectItem value="201-500">201-500 employés</SelectItem>
-                    <SelectItem value="500+">500+ employés</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="question">Question *</Label>
-                <Textarea
-                  id="question"
-                  name="question"
-                  required
-                  value={formData.question}
-                  onChange={handleChange}
-                  className="min-h-[100px]"
-                />
-              </div>
-
-              <Button type="submit" className="w-full">
-                Envoyer
-              </Button>
-            </form>
+            </div>
           </div>
         </div>
       </main>
