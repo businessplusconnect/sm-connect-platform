@@ -29,8 +29,8 @@ const Hero = () => {
         {/* Image à droite */}
         <div className="lg:w-1/2">
           <img 
-            src="/lovable-uploads/47970025-71a1-4a65-a9e0-8c4cd6ed0322.png" 
-            alt="Interface SM-CONNECT"
+            src="/lovable-uploads/bbb786d1-7c8f-4faf-bba2-fe099da2a725.png" 
+            alt="Interface SM-CONNECT avec tableau de bord et version mobile"
             className="w-full rounded-lg shadow-lg"
           />
         </div>
