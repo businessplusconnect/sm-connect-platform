@@ -1,3 +1,4 @@
+
 import {
   Users,
   FolderKanban,
@@ -26,19 +27,25 @@ const features = [
 
 const Features = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-        {features.map((feature) => (
-          <div
-            key={feature.title}
-            className="flex flex-col items-center text-center group"
-          >
-            <div className="p-4 rounded-full bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors">
-              <feature.icon className="w-6 h-6 text-primary" />
+    <div className="bg-gray-50 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">Nos services d'applications</h2>
+          <p className="text-gray-600">Des solutions intégrées pour tous vos besoins professionnels</p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+          {features.map((feature) => (
+            <div
+              key={feature.title}
+              className="flex flex-col items-center text-center group"
+            >
+              <div className="p-4 rounded-full bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors">
+                <feature.icon className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-sm font-medium text-gray-900">{feature.title}</h3>
             </div>
-            <h3 className="text-sm font-medium text-gray-900">{feature.title}</h3>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
