@@ -31,7 +31,7 @@ const Hero = () => {
           <img 
             src="/lovable-uploads/bbb786d1-7c8f-4faf-bba2-fe099da2a725.png" 
             alt="Interface SM-CONNECT avec tableau de bord et version mobile"
-            className="w-full rounded-lg shadow-lg"
+            className="w-full"
           />
         </div>
       </div>
