@@ -8,9 +8,16 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services-section');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const navItems = [
-    { label: "Applications", href: "#" },
-    { label: "Industries", href: "#" },
+    { label: "Accueil", href: "/" },
+    { label: "Services", onClick: scrollToServices },
     { label: "Communauté", href: "#" },
     { label: "Tarification", href: "/pricing" },
     { label: "Contact", href: "/contact" },
@@ -27,20 +34,30 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
-                key={item.label}
-                to={item.href}
-                className="text-gray-700 hover:text-primary transition-colors"
-              >
-                {item.label}
-              </Link>
+              item.onClick ? (
+                <button
+                  key={item.label}
+                  onClick={item.onClick}
+                  className="text-gray-700 hover:text-primary transition-colors"
+                >
+                  {item.label}
+                </button>
+              ) : (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className="text-gray-700 hover:text-primary transition-colors"
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
           </nav>
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="link" onClick={() => navigate("/contact")}>Se connecter</Button>
-            <Button onClick={() => navigate("/contact")}>Essai gratuit</Button>
+            <Button variant="link" onClick={() => navigate("/login")}>Se connecter</Button>
+            <Button onClick={() => navigate("/signup")}>S'inscrire</Button>
           </div>
 
           {/* Mobile menu button */}
@@ -60,20 +77,30 @@ const Header = () => {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
-              <Link
-                key={item.label}
-                to={item.href}
-                className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors"
-              >
-                {item.label}
-              </Link>
+              item.onClick ? (
+                <button
+                  key={item.label}
+                  onClick={item.onClick}
+                  className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors w-full text-left"
+                >
+                  {item.label}
+                </button>
+              ) : (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors"
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
             <div className="px-3 py-2 space-y-2">
-              <Button variant="link" className="w-full" onClick={() => navigate("/contact")}>
+              <Button variant="link" className="w-full" onClick={() => navigate("/login")}>
                 Se connecter
               </Button>
-              <Button className="w-full" onClick={() => navigate("/contact")}>
-                Essai gratuit
+              <Button className="w-full" onClick={() => navigate("/signup")}>
+                S'inscrire
               </Button>
             </div>
           </div>
