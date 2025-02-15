@@ -12,37 +12,42 @@ const Pricing = () => {
     {
       name: "Basique",
       description: "Gère tout le travail de l'équipe dans un seul espace",
-      price: billingType === "annual" ? "5" : "7",
-      totalPrice: "50",
+      price: billingType === "annual" ? "5" : "8",
+      totalPrice: "55",
       features: [
         "Gestion des ventes",
         "Gestion des clients & fournisseurs",      
         "Exportation des données (CSV, PDF, Excel, Email)",
-        "Support technique",
-        "Sauvegarde & Sécurité"
+        "Support technique : Email uniquement",
+        "Sauvegarde & Sécurité : Quotidienne"
       ]
     },
     {
       name: "Standard",
       description: "Collaborez et optimisez le travail de votre équipe",
-      price: billingType === "annual" ? "8" : "10",
-      totalPrice: "80",
+      price: billingType === "annual" ? "9" : "13",
+      totalPrice: "99",
       popular: true,
       features: [
         "Tout du plan Basique",
-        "Vue calendrier et Gantt",
-        "Vidéo forfait standard"
+        "Gestion des achats",
+        "Gestion des stocks",
+        "Tableaux de bord & statistiques avancées",
+        "Gestion des paiements et trésorerie",
+        "Support technique : Email & Chat"
       ]
     },
     {
-      name: "Pro",
+      name: "Professionnel",
       description: "Rationalisez vos processus de travail complexes de manière optimale",
-      price: billingType === "annual" ? "10" : "12",
-      totalPrice: "100",
+      price: billingType === "annual" ? "15" : "20",
+      totalPrice: "165",
       features: [
         "Tout du plan Standard",
-        "Tableaux privés",
-        "Vidéo forfait pro"
+        "Support technique : Prioritaire (Email, Chat & Téléphone)",
+        "Sauvegarde & Sécurité : Temps réel"
+        "Personnalisation avancée (branding, documents)",
+        "Accès API & Intégrations"
       ]
     }
   ];
