@@ -1,15 +1,12 @@
 import { ArrowRight, Mail } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-
 const Footer = () => {
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // TODO: Implement newsletter subscription
   };
-
-  return (
-    <footer className="bg-gray-50 py-12 mt-20">
+  return <footer className="bg-gray-50 py-12 mt-20">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Section Contact */}
@@ -21,10 +18,7 @@ const Footer = () => {
               </p>
               <div className="flex items-center gap-2">
                 <Mail className="h-5 w-5 text-blue-600" />
-                <a
-                  href="mailto:support@sm-connect.com"
-                  className="text-blue-600 hover:text-blue-700 transition-colors"
-                >
+                <a href="mailto:support@sm-connect.com" className="text-blue-600 hover:text-blue-700 transition-colors">
                   support@sm-connect.com
                 </a>
               </div>
@@ -36,16 +30,9 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-6">
               Abonnez-vous à notre newsletter
             </h3>
-            <p className="text-gray-600 mb-6">
-              SM-COONECT est une suite d'applications open source couvrant tous les besoins de votre entreprise: CRM, eCommerce, Comptabilité, Inventaire, Point de Vente, Gestion de Projet, etc.
-              Le positionnement unique de sm-connect est d'être à la fois très facile à utiliser et totalement intégré.
-            </p>
+            <p className="text-gray-600 mb-6">SM-Connect est une suite d'applications open source couvrant tous les besoins de votre entreprise: CRM, eCommerce, Comptabilité, Inventaire, Point de Vente, Gestion de Projet, etc. Le positionnement unique de sm-connect est d'être à la fois très facile à utiliser et totalement intégré.</p>
             <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
-              <Input
-                type="email"
-                placeholder="Entrez votre email"
-                className="flex-1"
-              />
+              <Input type="email" placeholder="Entrez votre email" className="flex-1" />
               <Button type="submit" variant="ghost" size="icon">
                 <ArrowRight className="h-5 w-5" />
               </Button>
@@ -60,8 +47,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
