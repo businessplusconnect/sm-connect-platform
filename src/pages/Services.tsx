@@ -69,16 +69,25 @@ const Services = () => {
       <Header />
       <main className="flex-grow py-20 bg-gradient-to-b from-[#D3E4FD] to-white">
         <div className="container mx-auto px-4">
-          {/* Hero Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold mb-4">
-              Nos Services – Gérez votre entreprise en toute simplicité avec SM-Connect
-            </h1>
-            <p className="text-xl text-gray-600">
-              SM-Connect est une solution 100 % cloud, sécurisée et intuitive, conçue pour optimiser la gestion de votre entreprise. 
-              Que vous soyez une TPE, PME ou un grand compte, nous vous proposons une solution complète pour gagner du temps, 
-              améliorer votre productivité et centraliser vos opérations.
-            </p>
+          {/* Hero Section - Modified to be side by side */}
+          <div className="flex flex-col lg:flex-row items-center gap-12 mb-16">
+            <div className="lg:w-1/2">
+              <h1 className="text-4xl font-bold mb-4 text-left">
+                Nos Services – Gérez votre entreprise en toute simplicité avec SM-Connect
+              </h1>
+              <p className="text-xl text-gray-600 text-left">
+                SM-Connect est une solution 100 % cloud, sécurisée et intuitive, conçue pour optimiser la gestion de votre entreprise. 
+                Que vous soyez une TPE, PME ou un grand compte, nous vous proposons une solution complète pour gagner du temps, 
+                améliorer votre productivité et centraliser vos opérations.
+              </p>
+            </div>
+            <div className="lg:w-1/2">
+              <img 
+                src="/lovable-uploads/f808848a-5eca-4c61-b2b1-03681a06f1ca.png"
+                alt="Services SM-Connect"
+                className="rounded-lg shadow-lg w-full"
+              />
+            </div>
           </div>
 
           {/* Services Grid */}
@@ -104,12 +113,12 @@ const Services = () => {
             ))}
           </div>
 
-          {/* Trust Section */}
+          {/* Trust Section - Changed image */}
           <div className="flex flex-col lg:flex-row items-center gap-12 mb-16">
             <div className="lg:w-1/2">
               <img 
-                src="/lovable-uploads/47970025-71a1-4a65-a9e0-8c4cd6ed0322.png"
-                alt="Interface SM-Connect"
+                src="/lovable-uploads/704d0baf-3c88-4149-99d0-6f94a6b3562e.png"
+                alt="Faire confiance à SM-Connect"
                 className="rounded-lg shadow-lg w-full"
               />
             </div>
