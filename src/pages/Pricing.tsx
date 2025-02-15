@@ -15,8 +15,11 @@ const Pricing = () => {
       price: billingType === "annual" ? "5" : "7",
       totalPrice: "50",
       features: [
-        "Visiteurs gratuits illimités",
-        "Gestion d'équipe dans un seul espace"
+        "Gestion des ventes",
+        "Gestion des clients & fournisseurs",      
+        "Exportation des données (CSV, PDF, Excel, Email)",
+        "Support technique"
+        "Sauvegarde & Sécurité"
       ]
     },
     {
