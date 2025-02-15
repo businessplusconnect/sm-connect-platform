@@ -13,7 +13,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-6">Trouvez-nous n'importe où</h3>
             <div className="space-y-4">
-              <p className="text-gray-400 mx-0 px-[12px] my-0">SM-Connect est une application entièrement hébergée dans le cloud, garantissant accessibilité, performance et sécurité optimales.</p>
+              <p className="text-gray-600 mx-0 px-[12px] my-0">SM-Connect est une application entièrement hébergée dans le cloud, garantissant accessibilité, performance et sécurité optimales.</p>
               <div className="flex items-center gap-2">
                 <Mail className="h-5 w-5 text-blue-600" />
                 <a href="mailto:support@sm-connect.com" className="text-blue-600 hover:text-blue-700 transition-colors">
