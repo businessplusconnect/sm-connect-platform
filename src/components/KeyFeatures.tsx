@@ -35,7 +35,7 @@ const KeyFeatures = () => {
                   </div>
                 </div>)}
             </div>
-            <Button onClick={() => navigate("/features")} variant="outline" className="">
+            <Button onClick={() => navigate("/features")} variant="outline" className="mt-8">
               VOIR LES FONCTIONNALITÉS
             </Button>
           </div>
