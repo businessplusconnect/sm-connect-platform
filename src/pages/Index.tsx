@@ -1,7 +1,10 @@
 
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Features from "@/components/Features";
+import HomeHero from "@/components/HomeHero";
+import WhyChoose from "@/components/WhyChoose";
+import KeyFeatures from "@/components/KeyFeatures";
+import Testimonials from "@/components/Testimonials";
+import CallToAction from "@/components/CallToAction";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -9,8 +12,11 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-[#D3E4FD] to-white">
       <Header />
       <main>
-        <Hero />
-        <Features />
+        <HomeHero />
+        <WhyChoose />
+        <KeyFeatures />
+        <Testimonials />
+        <CallToAction />
       </main>
       <Footer />
     </div>
