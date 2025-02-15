@@ -45,7 +45,7 @@ const Pricing = () => {
       features: [
         "Tout du plan Standard",
         "Support technique : Prioritaire (Email, Chat & Téléphone)",
-        "Sauvegarde & Sécurité : Temps réel"
+        "Sauvegarde & Sécurité : Temps réel",
         "Personnalisation avancée (branding, documents)",
         "Accès API & Intégrations"
       ]
