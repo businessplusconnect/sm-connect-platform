@@ -11,9 +11,7 @@ const Hero = () => {
             Une suite complète d'applications pour gérer efficacement votre entreprise : CRM, eCommerce, Comptabilité, et plus encore.
           </p>
           <div className="flex gap-4">
-            <Button onClick={() => navigate("/contact")} variant="default" size="lg">
-              Réserver une démo
-            </Button>
+            <Button onClick={() => navigate("/contact")} variant="default" size="lg">Essai gratuit</Button>
             <Button variant="outline" size="lg" onClick={() => navigate("/contact")}>
               En savoir plus
             </Button>
