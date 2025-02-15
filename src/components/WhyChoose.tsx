@@ -33,7 +33,7 @@ const WhyChoose = () => {
           {/* Image à gauche */}
           <div className="lg:w-1/2">
             <img 
-              src="/lovable-uploads/47970025-71a1-4a65-a9e0-8c4cd6ed0322.png"
+              src="/lovable-uploads/Pourquoi_choisir_SM-Connect.png"
               alt="Interface SM-CONNECT simple et intuitive"
               className="w-full rounded-lg"
             />
