@@ -18,7 +18,7 @@ const Pricing = () => {
         "Gestion des ventes",
         "Gestion des clients & fournisseurs",      
         "Exportation des données (CSV, PDF, Excel, Email)",
-        "Support technique"
+        "Support technique",
         "Sauvegarde & Sécurité"
       ]
     },
