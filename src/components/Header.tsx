@@ -32,7 +32,13 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <Link to="/" className="text-xl font-bold">SM-Connect</Link>
+            <Link to="/" className="text-xl font-bold">
+              <img 
+                src="/lovable-uploads/logo-smc-colleur-77-34.png"
+                alt="Interface SM-CONNECT simple et intuitive"
+                className="w-full rounded-lg"
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
