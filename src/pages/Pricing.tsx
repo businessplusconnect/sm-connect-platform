@@ -2,9 +2,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Check } from "lucide-react";
+import { Check, X } from "lucide-react";
 
 const Pricing = () => {
   const [billingType, setBillingType] = useState<"monthly" | "annual">("annual");
@@ -48,6 +49,21 @@ const Pricing = () => {
     }
   ];
 
+  const comparativeFeatures = [
+    { feature: "Utilisateurs", basic: "1 utilisateur", standard: "Jusqu'à 10 utilisateurs", pro: "Illimité" },
+    { feature: "Gestion des ventes", basic: true, standard: true, pro: true },
+    { feature: "Gestion des achats", basic: false, standard: true, pro: true },
+    { feature: "Gestion des stocks", basic: false, standard: true, pro: true },
+    { feature: "Gestion des clients & fournisseurs", basic: true, standard: true, pro: true },
+    { feature: "Tableaux de bord & statistiques avancées", basic: false, standard: true, pro: true },
+    { feature: "Gestion des paiements et trésorerie", basic: false, standard: true, pro: true },
+    { feature: "Exportation des données (CSV, PDF, Excel)", basic: true, standard: true, pro: true },
+    { feature: "Support technique", basic: "Email uniquement", standard: "Email & Chat", pro: "Prioritaire (Email, Chat & Téléphone)" },
+    { feature: "Personnalisation avancée (branding, documents)", basic: false, standard: false, pro: true },
+    { feature: "Sauvegarde & Sécurité", basic: "Quotidienne", standard: "Quotidienne", pro: "Temps réel" },
+    { feature: "Accès API & Intégrations", basic: false, standard: false, pro: true },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -80,7 +96,7 @@ const Pricing = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             {plans.map((plan) => (
               <Card key={plan.name} className={`relative ${plan.popular ? 'border-primary shadow-lg' : ''}`}>
                 {plan.popular && (
@@ -118,6 +134,96 @@ const Pricing = () => {
                 </CardFooter>
               </Card>
             ))}
+          </div>
+
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-center mb-8">Comparaison détaillée des plans</h2>
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Fonctionnalités</TableHead>
+                    <TableHead>Basique 🚀</TableHead>
+                    <TableHead>Standard ⭐</TableHead>
+                    <TableHead>Professionnel 💎</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {comparativeFeatures.map((row) => (
+                    <TableRow key={row.feature}>
+                      <TableCell className="font-medium">{row.feature}</TableCell>
+                      <TableCell>
+                        {typeof row.basic === "boolean" ? (
+                          row.basic ? (
+                            <Check className="h-5 w-5 text-green-500" />
+                          ) : (
+                            <X className="h-5 w-5 text-red-500" />
+                          )
+                        ) : (
+                          row.basic
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {typeof row.standard === "boolean" ? (
+                          row.standard ? (
+                            <Check className="h-5 w-5 text-green-500" />
+                          ) : (
+                            <X className="h-5 w-5 text-red-500" />
+                          )
+                        ) : (
+                          row.standard
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {typeof row.pro === "boolean" ? (
+                          row.pro ? (
+                            <Check className="h-5 w-5 text-green-500" />
+                          ) : (
+                            <X className="h-5 w-5 text-red-500" />
+                          )
+                        ) : (
+                          row.pro
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">Quel plan choisir ?</h2>
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Basique</h3>
+                <p className="text-gray-600">
+                  Idéal pour les petites entreprises qui veulent une gestion simple des ventes.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Standard</h3>
+                <p className="text-gray-600">
+                  Parfait pour les PME qui ont besoin d'une gestion complète des achats, stocks et finances.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Professionnel</h3>
+                <p className="text-gray-600">
+                  Destiné aux entreprises ayant des besoins avancés, avec des options de personnalisation et un support premium.
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center bg-blue-50 p-6 rounded-lg">
+              <p className="text-lg">
+                💡 Besoin d'une solution sur mesure ? 
+                <Button variant="link" onClick={() => window.location.href = '/contact'} className="text-primary">
+                  Contactez-nous
+                </Button> 
+                pour une offre adaptée à votre activité.
+              </p>
+            </div>
           </div>
         </div>
       </main>
