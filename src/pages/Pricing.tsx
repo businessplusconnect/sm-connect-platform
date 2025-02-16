@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,42 +13,37 @@ const Pricing = () => {
     {
       name: "Basique",
       description: "Gère tout le travail de l'équipe dans un seul espace",
-      price: billingType === "annual" ? "5" : "8",
-      totalPrice: "55",
+      price: billingType === "annual" ? "5" : "7",
+      totalPrice: "50",
       features: [
         "Gestion des ventes",
         "Gestion des clients & fournisseurs",      
         "Exportation des données (CSV, PDF, Excel, Email)",
-        "Support technique : Email uniquement",
-        "Sauvegarde & Sécurité : Quotidienne"
+        "Support technique",
+        "Sauvegarde & Sécurité"
       ]
     },
     {
       name: "Standard",
       description: "Collaborez et optimisez le travail de votre équipe",
-      price: billingType === "annual" ? "9" : "13",
-      totalPrice: "99",
+      price: billingType === "annual" ? "8" : "10",
+      totalPrice: "80",
       popular: true,
       features: [
         "Tout du plan Basique",
-        "Gestion des achats",
-        "Gestion des stocks",
-        "Tableaux de bord & statistiques avancées",
-        "Gestion des paiements et trésorerie",
-        "Support technique : Email & Chat"
+        "Vue calendrier et Gantt",
+        "Vidéo forfait standard"
       ]
     },
     {
-      name: "Professionnel",
+      name: "Pro",
       description: "Rationalisez vos processus de travail complexes de manière optimale",
-      price: billingType === "annual" ? "15" : "20",
-      totalPrice: "165",
+      price: billingType === "annual" ? "10" : "12",
+      totalPrice: "100",
       features: [
         "Tout du plan Standard",
-        "Support technique : Prioritaire (Email, Chat & Téléphone)",
-        "Sauvegarde & Sécurité : Temps réel",
-        "Personnalisation avancée (branding, documents)",
-        "Accès API & Intégrations"
+        "Tableaux privés",
+        "Vidéo forfait pro"
       ]
     }
   ];
