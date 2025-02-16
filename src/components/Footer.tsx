@@ -28,7 +28,8 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-6">
               Abonnez-vous à notre newsletter
             </h3>
-            <p className="text-gray-600 mb-6">SM-Connect est une suite d'applications open source couvrant tous les besoins de votre entreprise: CRM, eCommerce, Comptabilité, Inventaire, Point de Vente, Gestion de Projet, etc. Le positionnement unique de sm-connect est d'être à la fois très facile à utiliser et totalement intégré.</p>
+            <p className="text-gray-600 mb-6">SM-Connect est une suite d'applications open source couvrant tous les besoins de votre entreprise: 
+CRM, eCommerce, Comptabilité, Inventaire, Point de Vente, Gestion de Projet, etc. Le positionnement unique de sm-connect est d'être à la fois très facile à utiliser et totalement intégré.</p>
             <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
               <Input type="email" placeholder="Entrez votre email" className="flex-1" />
               <Button type="submit" variant="ghost" size="icon">
