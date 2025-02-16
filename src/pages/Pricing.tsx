@@ -41,7 +41,7 @@ const Pricing = () => {
       ]
     },
     {
-      name: "Pro",
+      name: "Professionnel",
       description: "Rationalisez vos processus de travail complexes de manière optimale",
       price: billingType === "annual" ? "10" : "12",
       totalPrice: "100",
@@ -57,18 +57,17 @@ const Pricing = () => {
   ];
 
   const comparativeFeatures = [
-    { feature: "Utilisateurs", basic: "1 utilisateur", standard: "Jusqu'à 10 utilisateurs", pro: "Illimité" },
-    { feature: "Gestion des ventes", basic: true, standard: true, pro: true },
-    { feature: "Gestion des achats", basic: false, standard: true, pro: true },
-    { feature: "Gestion des stocks", basic: false, standard: true, pro: true },
-    { feature: "Gestion des clients & fournisseurs", basic: true, standard: true, pro: true },
-    { feature: "Tableaux de bord & statistiques avancées", basic: false, standard: true, pro: true },
-    { feature: "Gestion des paiements et trésorerie", basic: false, standard: true, pro: true },
-    { feature: "Exportation des données (CSV, PDF, Excel)", basic: true, standard: true, pro: true },
-    { feature: "Support technique", basic: "Email uniquement", standard: "Email & Chat", pro: "Prioritaire (Email, Chat & Téléphone)" },
-    { feature: "Personnalisation avancée (branding, documents)", basic: false, standard: false, pro: true },
-    { feature: "Sauvegarde & Sécurité", basic: "Quotidienne", standard: "Quotidienne", pro: "Temps réel" },
-    { feature: "Accès API & Intégrations", basic: false, standard: false, pro: true },
+    { feature: "Gestion des ventes", basic: true, standard: true, Professionnel : true },
+    { feature: "Gestion des achats", basic: false, standard: true, Professionnel : true },
+    { feature: "Gestion des stocks", basic: false, standard: true, Professionnel : true },
+    { feature: "Gestion des clients & fournisseurs", basic: true, standard: true, Professionnel : true },
+    { feature: "Tableaux de bord & statistiques avancées", basic: false, standard: true, Professionnel : true },
+    { feature: "Gestion des paiements et trésorerie", basic: false, standard: true, Professionnel : true },
+    { feature: "Exportation des données (CSV, PDF, Excel)", basic: true, standard: true, Professionnel : true },
+    { feature: "Support technique", basic: "Email uniquement", standard: "Email & Chat", Professionnel : "Prioritaire (Email, Chat & Téléphone)" },
+    { feature: "Personnalisation avancée (branding, documents)", basic: false, standard: false, Professionnel : true },
+    { feature: "Sauvegarde & Sécurité", basic: "Quotidienne", standard: "Quotidienne", Professionnel : "Temps réel" },
+    { feature: "Accès API & Intégrations", basic: false, standard: false, Professionnel : true },
   ];
 
   return (
@@ -182,14 +181,14 @@ const Pricing = () => {
                         )}
                       </TableCell>
                       <TableCell>
-                        {typeof row.pro === "boolean" ? (
-                          row.pro ? (
+                        {typeof row.professionnel === "boolean" ? (
+                          row.professionnel ? (
                             <Check className="h-5 w-5 text-green-500" />
                           ) : (
                             <X className="h-5 w-5 text-red-500" />
                           )
                         ) : (
-                          row.pro
+                          row.professionnel
                         )}
                       </TableCell>
                     </TableRow>
