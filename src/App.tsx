@@ -4,6 +4,7 @@ import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import Pricing from "./pages/Pricing";
 import Services from "./pages/Services";
+import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -17,6 +18,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/support" element={<Support />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
