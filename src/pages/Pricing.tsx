@@ -32,8 +32,12 @@ const Pricing = () => {
       popular: true,
       features: [
         "Tout du plan Basique",
-        "Vue calendrier et Gantt",
-        "Vidéo forfait standard"
+        "Tout du plan Basique",
+        "Gestion des achats",
+        "Gestion des stocks",
+        "Tableaux de bord & statistiques avancées",
+        "Gestion des paiements et trésorerie",
+        "Support technique : Email & Chat"
       ]
     },
     {
@@ -43,8 +47,11 @@ const Pricing = () => {
       totalPrice: "100",
       features: [
         "Tout du plan Standard",
-        "Tableaux privés",
-        "Vidéo forfait pro"
+        "Tout du plan Standard",
+        "Support technique : Prioritaire (Email, Chat & Téléphone)",
+        "Sauvegarde & Sécurité : Temps réel",
+        "Personnalisation avancée (branding, documents)",
+        "Accès API & Intégrations"
       ]
     }
   ];
