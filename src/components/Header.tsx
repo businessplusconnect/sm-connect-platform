@@ -22,6 +22,10 @@ const Header = () => {
       href: "/pricing"
     },
     {
+      label: "Support",
+      href: "/support"
+    },
+    {
       label: "Contact",
       href: "/contact"
     }
