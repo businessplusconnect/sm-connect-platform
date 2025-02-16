@@ -181,14 +181,14 @@ const Pricing = () => {
                         )}
                       </TableCell>
                       <TableCell>
-                        {typeof row.professionnel === "boolean" ? (
-                          row.professionnel ? (
+                        {typeof row.pro === "boolean" ? (
+                          row.pro ? (
                             <Check className="h-5 w-5 text-green-500" />
                           ) : (
                             <X className="h-5 w-5 text-red-500" />
                           )
                         ) : (
-                          row.professionnel
+                          row.pro
                         )}
                       </TableCell>
                     </TableRow>
