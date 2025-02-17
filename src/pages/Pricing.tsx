@@ -200,20 +200,20 @@ const Pricing = () => {
 
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">Quel plan choisir ?</h2>
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div>
+            <div className="space-y-6 mb-12">
+              <div className="bg-white p-6 rounded-lg border">
                 <h3 className="text-xl font-semibold mb-2">Basique</h3>
                 <p className="text-gray-600">
                   Idéal pour les petites entreprises qui veulent une gestion simple des ventes.
                 </p>
               </div>
-              <div>
+              <div className="bg-white p-6 rounded-lg border">
                 <h3 className="text-xl font-semibold mb-2">Standard</h3>
                 <p className="text-gray-600">
                   Parfait pour les PME qui ont besoin d'une gestion complète des achats, stocks et finances.
                 </p>
               </div>
-              <div>
+              <div className="bg-white p-6 rounded-lg border">
                 <h3 className="text-xl font-semibold mb-2">Professionnel</h3>
                 <p className="text-gray-600">
                   Destiné aux entreprises ayant des besoins avancés, avec des options de personnalisation et un support premium.
