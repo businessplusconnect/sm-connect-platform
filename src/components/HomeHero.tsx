@@ -38,7 +38,7 @@ const HomeHero = () => {
         {/* Image */}
         <div className="lg:w-1/2 mb-8 lg:mb-0">
           <img 
-            src="/lovable-uploads/bbb786d1-7c8f-4faf-bba2-fe099da2a725.png"
+            src="/lovable-uploads/00424dc8-77ba-4038-a86d-15443eda4c99.png"
             alt="Interface SM-CONNECT avec tableau de bord"
             className="w-full rounded-lg"
           />
