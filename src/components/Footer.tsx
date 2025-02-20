@@ -18,15 +18,15 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-50 pt-16 pb-8">
+    <footer className="bg-[#1A1F2C] text-gray-100 pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Section Newsletter */}
           <div className="lg:col-span-2">
-            <h3 className="text-xl font-semibold mb-4">
+            <h3 className="text-xl font-semibold mb-4 text-white">
               Abonnez-vous à notre newsletter
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-300 mb-6">
               SM-Connect est une suite d'applications open source couvrant tous les besoins de votre entreprise: 
               CRM, eCommerce, Comptabilité, Inventaire, Point de Vente, Gestion de Projet, etc. 
               Le positionnement unique de sm-connect est d'être à la fois très facile à utiliser et totalement intégré.
@@ -35,7 +35,7 @@ const Footer = () => {
               <Input 
                 type="email" 
                 placeholder="Entrez votre email" 
-                className="flex-1" 
+                className="flex-1 bg-gray-800 border-gray-700 text-white placeholder:text-gray-400" 
                 required 
               />
               <Button type="submit" variant="default">
@@ -46,35 +46,35 @@ const Footer = () => {
 
           {/* Section Liens utiles */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Liens utiles</h3>
+            <h3 className="text-xl font-semibold mb-4 text-white">Liens utiles</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/about" className="text-gray-600 hover:text-primary transition-colors">
+                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">
                   À propos
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-600 hover:text-primary transition-colors">
+                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/features" className="text-gray-600 hover:text-primary transition-colors">
+                <Link to="/features" className="text-gray-300 hover:text-white transition-colors">
                   Fonctionnalités
                 </Link>
               </li>
               <li>
-                <Link to="/pricing" className="text-gray-600 hover:text-primary transition-colors">
+                <Link to="/pricing" className="text-gray-300 hover:text-white transition-colors">
                   Tarification
                 </Link>
               </li>
               <li>
-                <Link to="/support" className="text-gray-600 hover:text-primary transition-colors">
+                <Link to="/support" className="text-gray-300 hover:text-white transition-colors">
                   Support
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="text-gray-600 hover:text-primary transition-colors">
+                <Link to="/privacy" className="text-gray-300 hover:text-white transition-colors">
                   Politique de confidentialité
                 </Link>
               </li>
@@ -83,13 +83,13 @@ const Footer = () => {
 
           {/* Section Contact */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Contact</h3>
+            <h3 className="text-xl font-semibold mb-4 text-white">Contact</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <Mail className="h-5 w-5 text-primary" />
                 <a 
                   href="mailto:support@sm-connect.com" 
-                  className="text-gray-600 hover:text-primary transition-colors"
+                  className="text-gray-300 hover:text-white transition-colors"
                 >
                   support@sm-connect.com
                 </a>
@@ -97,7 +97,7 @@ const Footer = () => {
               <div>
                 <Button 
                   variant="outline" 
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 border-gray-600 text-gray-300 hover:text-white"
                   onClick={handleChatOpen}
                 >
                   <MessageSquare className="h-5 w-5" />
@@ -109,7 +109,7 @@ const Footer = () => {
                   href="https://linkedin.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-primary transition-colors"
+                  className="text-gray-300 hover:text-white transition-colors"
                 >
                   <Linkedin className="h-6 w-6" />
                 </a>
@@ -117,7 +117,7 @@ const Footer = () => {
                   href="https://facebook.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-primary transition-colors"
+                  className="text-gray-300 hover:text-white transition-colors"
                 >
                   <Facebook className="h-6 w-6" />
                 </a>
@@ -125,7 +125,7 @@ const Footer = () => {
                   href="https://twitter.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-primary transition-colors"
+                  className="text-gray-300 hover:text-white transition-colors"
                 >
                   <Twitter className="h-6 w-6" />
                 </a>
@@ -135,8 +135,8 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="pt-8 border-t border-gray-200">
-          <p className="text-center text-gray-600">
+        <div className="pt-8 border-t border-gray-700">
+          <p className="text-center text-gray-400">
             © 2024 SM-Connect. Tous droits réservés.
           </p>
         </div>
