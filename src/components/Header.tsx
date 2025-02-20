@@ -60,6 +60,7 @@ const Header = () => {
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center space-x-4">
+            <Button variant="link" onClick={() => navigate("/profile")}>Mon Profil</Button>
             <Button variant="link" onClick={() => navigate("/login")}>Se connecter</Button>
             <Button onClick={() => navigate("/signup")}>S'inscrire</Button>
           </div>
@@ -88,6 +89,9 @@ const Header = () => {
               </Link>
             ))}
             <div className="px-3 py-2 space-y-2">
+              <Button variant="link" className="w-full" onClick={() => navigate("/profile")}>
+                Mon Profil
+              </Button>
               <Button variant="link" className="w-full" onClick={() => navigate("/login")}>
                 Se connecter
               </Button>
