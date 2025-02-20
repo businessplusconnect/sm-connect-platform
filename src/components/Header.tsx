@@ -62,11 +62,7 @@ const Header = () => {
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            {isLoggedIn && (
-          /*    <Button variant="link" onClick={() => navigate("/profile")}>
-                Mon Profil
-              </Button> */
-            )}
+
             {!isLoggedIn && (
               <>
                 <Button variant="link" onClick={() => navigate("/login")}>Se connecter</Button>
