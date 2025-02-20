@@ -96,8 +96,8 @@ const Footer = () => {
               </div>
               <div>
                 <Button 
-                  variant="outline" 
-                  className="flex items-center gap-2 border-gray-600 text-gray-300 hover:text-white"
+                  variant="secondary"
+                  className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-gray-100"
                   onClick={handleChatOpen}
                 >
                   <MessageSquare className="h-5 w-5" />
