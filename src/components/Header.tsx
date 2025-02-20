@@ -7,6 +7,8 @@ import { Link, useNavigate } from "react-router-dom";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  // Simulation d'un état de connexion (à remplacer plus tard par une vraie authentification)
+  const [isLoggedIn] = useState(false);
 
   const navItems = [
     {
@@ -60,9 +62,17 @@ const Header = () => {
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="link" onClick={() => navigate("/profile")}>Mon Profil</Button>
-            <Button variant="link" onClick={() => navigate("/login")}>Se connecter</Button>
-            <Button onClick={() => navigate("/signup")}>S'inscrire</Button>
+            {isLoggedIn && (
+              <Button variant="link" onClick={() => navigate("/profile")}>
+                Mon Profil
+              </Button>
+            )}
+            {!isLoggedIn && (
+              <>
+                <Button variant="link" onClick={() => navigate("/login")}>Se connecter</Button>
+                <Button onClick={() => navigate("/signup")}>S'inscrire</Button>
+              </>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -89,15 +99,20 @@ const Header = () => {
               </Link>
             ))}
             <div className="px-3 py-2 space-y-2">
-              <Button variant="link" className="w-full" onClick={() => navigate("/profile")}>
-                Mon Profil
-              </Button>
-              <Button variant="link" className="w-full" onClick={() => navigate("/login")}>
-                Se connecter
-              </Button>
-              <Button className="w-full" onClick={() => navigate("/signup")}>
-                S'inscrire
-              </Button>
+              {isLoggedIn ? (
+                <Button variant="link" className="w-full" onClick={() => navigate("/profile")}>
+                  Mon Profil
+                </Button>
+              ) : (
+                <>
+                  <Button variant="link" className="w-full" onClick={() => navigate("/login")}>
+                    Se connecter
+                  </Button>
+                  <Button className="w-full" onClick={() => navigate("/signup")}>
+                    S'inscrire
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         </div>
