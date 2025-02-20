@@ -17,6 +17,7 @@ const Login = () => {
     e.preventDefault();
     // Ici la logique de connexion
     console.log("Login attempt with:", { email, password });
+    navigate("/profile"); // Redirection vers la page profil après connexion
   };
 
   return (
