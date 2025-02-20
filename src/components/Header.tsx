@@ -8,7 +8,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   // Simulation d'un état de connexion (à remplacer plus tard par une vraie authentification)
-  const [isLoggedIn] = useState(false);
+  const [isLoggedIn] = useState(true);
 
   const navItems = [
     {
